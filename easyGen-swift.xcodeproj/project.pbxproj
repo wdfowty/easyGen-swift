@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		143408CD2380006100A60CDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 143408CB2380006100A60CDF /* Main.storyboard */; };
 		143408CF2380006100A60CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 143408CE2380006100A60CDF /* Assets.xcassets */; };
 		143408D22380006100A60CDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 143408D02380006100A60CDF /* LaunchScreen.storyboard */; };
+		143408DB2380008300A60CDF /* RandomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143408DA2380008300A60CDF /* RandomService.swift */; };
+		143408DC2380008300A60CDF /* PasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143408D92380008300A60CDF /* PasswordService.swift */; };
+		143408DF238000F700A60CDF /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = 143408DE238000F700A60CDF /* Sodium */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,8 @@
 		143408CE2380006100A60CDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		143408D12380006100A60CDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		143408D32380006100A60CDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		143408D92380008300A60CDF /* PasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordService.swift; sourceTree = "<group>"; };
+		143408DA2380008300A60CDF /* RandomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				143408DF238000F700A60CDF /* Sodium in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +68,8 @@
 				143408CB2380006100A60CDF /* Main.storyboard */,
 				143408CE2380006100A60CDF /* Assets.xcassets */,
 				143408D02380006100A60CDF /* LaunchScreen.storyboard */,
+				143408D92380008300A60CDF /* PasswordService.swift */,
+				143408DA2380008300A60CDF /* RandomService.swift */,
 				143408D32380006100A60CDF /* Info.plist */,
 			);
 			path = "easyGen-swift";
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = "easyGen-swift";
+			packageProductDependencies = (
+				143408DE238000F700A60CDF /* Sodium */,
+			);
 			productName = "easyGen-swift";
 			productReference = 143408C22380006000A60CDF /* easyGen-swift.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 143408B92380006000A60CDF;
+			packageReferences = (
+				143408DD238000F700A60CDF /* XCRemoteSwiftPackageReference "swift-sodium" */,
+			);
 			productRefGroup = 143408C32380006000A60CDF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				143408DB2380008300A60CDF /* RandomService.swift in Sources */,
 				143408CA2380006100A60CDF /* ViewController.swift in Sources */,
 				143408C62380006100A60CDF /* AppDelegate.swift in Sources */,
+				143408DC2380008300A60CDF /* PasswordService.swift in Sources */,
 				143408C82380006100A60CDF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +232,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LIBRARY_SEARCH_PATHS = "/Users/Sean/_CODE/__LIBS/libsodium/libsodium-ios/lib";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +287,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LIBRARY_SEARCH_PATHS = "/Users/Sean/_CODE/__LIBS/libsodium/libsodium-ios/lib";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -338,6 +356,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		143408DD238000F700A60CDF /* XCRemoteSwiftPackageReference "swift-sodium" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jedisct1/swift-sodium.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		143408DE238000F700A60CDF /* Sodium */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 143408DD238000F700A60CDF /* XCRemoteSwiftPackageReference "swift-sodium" */;
+			productName = Sodium;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 143408BA2380006000A60CDF /* Project object */;
 }

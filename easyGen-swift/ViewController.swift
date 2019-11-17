@@ -14,6 +14,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBAction func doItButtonPressed(_ sender: Any) {
+        let pass = PasswordService()
+        let myPassword = pass.generatePassword()
+        
+        self.passwordTextField.text = myPassword
+    }
+    
 
 
 }
